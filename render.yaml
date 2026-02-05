@@ -1,17 +1,14 @@
 services:
   - type: web
     name: conversational-data-analyst
-    env: python
+    runtime: docker
     region: singapore
     plan: free
     branch: main
-    buildCommand: pip install --no-cache-dir -r requirements.txt
-    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: DATABASE_URL
         sync: false
       - key: GROQ_API_KEY
         sync: false
-      - key: PYTHON_VERSION
-        value: 3.12.0
     healthCheckPath: /health
