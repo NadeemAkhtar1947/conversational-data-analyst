@@ -321,7 +321,7 @@ class ResumeChatbot {
         
         // Type character by character
         let currentText = '';
-        const speed = 15; // milliseconds per character (adjust for faster/slower typing)
+        const speed = 8; // milliseconds per character (adjust for faster/slower typing)
         
         for (let i = 0; i < formattedText.length; i++) {
             currentText += formattedText[i];
